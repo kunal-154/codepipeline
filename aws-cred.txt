@@ -1,0 +1,35 @@
+Warning: Unexpected input(s) 'chart_file', 'token', 'chart_ref', valid inputs are ['version', 'config', 'charts_dir', 'install_dir', 'install_only', 'skip_packaging', 'skip_existing', 'mark_as_latest', 'packages_with_index', 'pages_branch']
+Run helm/chart-releaser-action@v1.6.0
+Run owner=$(cut -d '/' -f 1 <<< "$GITHUB_REPOSITORY")
+/home/runner/work/_actions/helm/chart-releaser-action/v1.6.0/cr.sh: line 59: CR_TOKEN: Environment variable CR_TOKEN must be set
+Error: Process completed with exit code 1.
+
+
+
+
+
+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
+
+
+chart_file: ${{ steps.chart-info.outputs.chart-name }}-${{ steps.chart-info.outputs.chart-version }}.tgz
+          token: ${{ secrets.CR_TOKEN }}
+          chart_ref: https://github.com/kunal-154/helmChart-repo.git/nodejs-app
+
+
+
+
+
+
+
+
+
+
+
+AKIAWN5UDEMCPZUPGI3Q
+DyFNIUz1enipQDznFy2QDvM59qLBLGHUuiQzpk9x
+
+
+
+
+
+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

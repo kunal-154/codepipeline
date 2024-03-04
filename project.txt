@@ -1,0 +1,13 @@
+three tier
+node js app
+application Tier
+db Tier
+load balancer
+as 30%
+
+
+
+AWS Credenials
+
+AKIAWN5UDEMCFNOHSJ7K
+JtYEaq3cK2CA0nO+dF/9AN+WwO96kK/rtWk7NILt

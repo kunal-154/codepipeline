@@ -1,0 +1,40 @@
+/root/.pm2/logs/my-app-error.log
+/root/.pm2/logs/my-app-out.log
+
+s3://pm2-logsss
+s3://pm2-logsss
+
+
+
+#!/bin/bash
+
+# Set your PM2 log file paths (adjust file names as needed)
+OUT_LOG="/root/.pm2/logs/my-app-out.log"
+ERROR_LOG="/root/.pm2/logs/my-app-error.log"
+
+# Set your S3 bucket name
+S3_BUCKET_NAME="pm2-logsss"
+
+# Set the destination paths within S3 bucket
+OUT_LOG_DESTINATION="s3://pm2-logsss/logs/out/"
+ERROR_LOG_DESTINATION="s3://pm2-logsss/logs/error/"
+
+# Use AWS CLI to copy the rotated log files to S3
+aws s3 cp "$OUT_LOG" "s3://$S3_BUCKET_NAME/$OUT_LOG_DESTINATION"
+aws s3 cp "$ERROR_LOG" "s3://$S3_BUCKET_NAME/$ERROR_LOG_DESTINATION"
+
+
+git clone https://github.com/rat9615/simple-nodejs-app
+
+
+pm2 start index.js --name demo-test
+vi push-logs-to-s3.sh 
+pm2 conf pm2-logrotate:post_rotate "/home/ubuntu/project/push-logs-to-s3.sh"
+pm2 set pm2-logrotate:enabled true
+pm2 set pm2-logrotate:max_size 1M
+pm2 restart demo-test
+/home/ubuntu/project/push-logs-to-s3.sh 
+pm2 ls
+pm2 logs my-app-2
+
+
